@@ -5,7 +5,7 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - What is the syntax for writing a template literal?
-  - surround the string with backticks (`) and use ${variable_name} to insert the value of a variable
+  - surround the string with backticks (`) and use ${} to insert a variable or expression
 - What is "string interpolation"?
   - string interpolation is the process of embedding expressions into strings
 
