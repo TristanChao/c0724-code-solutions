@@ -1,12 +1,8 @@
 'use strict';
 /* exported defaults */
 function defaults(target, source) {
-  const targetKeys = [];
-  for (const key in target) {
-    targetKeys.push(key);
-  }
   for (const key in source) {
-    if (!targetKeys.includes(key)) {
+    if (target[key] === undefined) {
       target[key] = source[key];
     }
   }
