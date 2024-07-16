@@ -5,10 +5,11 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - Name two types of units that can be used to adjust `font-size` in CSS.
-
+  - pixels (px), which are fixed, and ems (em) which are relative to the parent's font size
 - What CSS property controls the font used for the text inside an element?
-
+  - font-family
 - Name three different types of values you can use to specify colors in CSS.
+  - named, rgb values, and hex code
 
 ## Notes
 
