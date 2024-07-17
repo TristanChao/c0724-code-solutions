@@ -40,14 +40,14 @@ select:hover {
 .title {
   text-align: center;
   color: #ec5d57;
-  font-weight: 400;
+  letter-spacing: 1.5px;
 }
 
 .input-field {
   width: 600px;
   height: 40px;
   padding: 0 12px;
-  border-radius: 10px;
+  border-radius: 7px;
   border-color: lightgray;
   border-width: 1px;
   font-family: 'Brandon Grotesque', sans-serif;
