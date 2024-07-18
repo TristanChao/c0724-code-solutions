@@ -11,6 +11,9 @@ body {
 
 .row {
   display: flex;
+}
+
+.space-around {
   justify-content: space-around;
 }
 
@@ -18,31 +21,32 @@ body {
   flex-basis: calc((100% / 3) - 5%);
 }
 
-.column-container {
+.column {
   display: flex;
   flex-direction: column;
+}
+
+.align-center {
   align-items: center;
 }
 
-.img-container {
+.circle-background {
   background: white;
   width: 140px;
   height: 140px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
   margin: 15px 0;
 }
 
-.img-container > div {
-  flex-basis: 50%;
-  height: 50%;
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
-  width: 100%;
-  object-fit: cover;
+  flex-basis: 50%;
+  height: 50%;
 }
 
 h1 {
