@@ -1,0 +1,245 @@
+body {
+  font-family: Avenir, sans-serif;
+  color: #6e6e6e;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.column-one-half {
+  flex-basis: 50%;
+}
+
+.column-one-third {
+  flex-basis: calc(100% / 3);
+}
+
+.column-one-fifth {
+  flex-basis: 20%;
+}
+
+.column-two-fifths {
+  flex-basis: 40%;
+}
+
+.column-three-fifths {
+  flex-basis: 60%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.width-90 {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  height: 55px;
+}
+
+.canvas-blue {
+  position: absolute;
+  left: 5%;
+  top: 20px;
+  width: 120px;
+  height: 25px;
+}
+
+.canvas-blue img {
+  width: 100%;
+}
+
+.header-link-container {
+  margin-right: 5%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.blue-button {
+  background-color: #2a4465;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue-button:hover {
+  background-color: #20334c;
+  cursor: pointer;
+}
+
+.contact-us {
+  height: 40px;
+  width: 115px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 170%;
+}
+
+.header-link-container .contact-us {
+  color: white;
+}
+
+hr {
+  border-top: 0 solid rgb(228, 228, 228);
+}
+
+h1,
+h2 {
+  font-family: 'Tiempos Headline', sans-serif;
+}
+
+#hero-banner {
+  margin-top: 50px;
+  background-image: linear-gradient(
+      to right,
+      rgba(100, 100, 100, 0.5),
+      rgba(100, 100, 100, 0.3) 80%
+    ),
+    url('images/hero.jpg');
+  background-position: right 0 top 0;
+  background-size: cover;
+  color: white;
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+#hero-banner-content {
+  width: 45%;
+  margin-left: 70px;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.get-started {
+  width: 200px;
+  height: 55px;
+  font-size: 20px;
+}
+
+#hero-banner-content .get-started {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#clinics {
+  margin-top: 100px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+#clinics .flex-row {
+  margin-top: 50px;
+}
+
+#clinics .clinic-names p {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+#learn-more {
+  margin-top: 110px;
+}
+
+#learn-more h2 {
+  margin-top: 0;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+#company-info-footer {
+  background-color: #525250;
+  color: white;
+  height: 430px;
+  padding: 100px 5%;
+}
+
+#company-info-footer ul {
+  margin: 0;
+  line-height: 250%;
+}
+
+.canvas-white {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+#white-footer {
+  height: 130px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links {
+  font-size: 20px;
+}
+
+#white-footer a {
+  margin-right: 40px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.no-bullet {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.white-link {
+  color: white;
+}
+
+.white-link:hover {
+  color: #d0d0d0;
+}
+
+.grey-link {
+  color: #6e6e6e;
+}
+
+.light-grey-link {
+  color: #a0a0a0;
+}
+
+.light-gray-link:hover {
+  color: #6e6e6e;
+}
