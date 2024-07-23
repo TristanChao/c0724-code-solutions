@@ -7,13 +7,12 @@ if (!$background) throw new Error('$background query failed');
 let lightOn = true;
 
 $lightBulb.addEventListener('click', () => {
-  if (lightOn) lightOn = false;
-  else if (!lightOn) lightOn = true;
-
-  if (!lightOn) {
+  if (lightOn) {
+    lightOn = false;
     $lightBulb.className = 'bulb bulb-dark';
     $background.className = 'back back-dark';
   } else {
+    lightOn = true;
     $lightBulb.className = 'bulb bulb-light';
     $background.className = 'back back-light';
   }
