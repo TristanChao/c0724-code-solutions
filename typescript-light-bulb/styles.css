@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+}
+
+.back {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-light {
+  background-color: rgb(255, 255, 255);
+}
+
+.back-dark {
+  background-color: rgb(22, 22, 22);
+}
+
+.bulb {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.bulb-light {
+  background-color: rgb(247, 247, 103);
+  box-shadow: 0 0 8px 4px rgba(247, 247, 103, 0.695);
+}
+
+.bulb-dark {
+  background-color: rgb(42, 42, 42);
+  box-shadow: 0 -12px 4px 4px rgb(0, 0, 0);
+}
