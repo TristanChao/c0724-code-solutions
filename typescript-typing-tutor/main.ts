@@ -1,10 +1,10 @@
 const typeSentences = [
-  'wizards use intelligence and sorcerers use charisma',
-  'drow elves have superior darkvision',
-  'kenku have excellent memory',
-  'werewolves are chaotic evil',
-  'homunculi are loyal servants',
-  'halflings are very lucky creatures',
+  'wizards use intelligence and sorcerers use charisma', // 51
+  'drow elves have superior darkvision', // 35
+  'kenku have excellent memory', // 27
+  'werewolves are chaotic evil', // 27
+  'homunculi are loyal servants', // 28
+  'halflings are very lucky creatures', // 34
 ];
 
 function getNewSentence(): void {
@@ -55,38 +55,42 @@ updateCurrentSpan();
 let totalKeyPress = 0;
 let correctKeyPress = 0;
 
+let accuracy = 0;
+
 document.addEventListener('keydown', (event: KeyboardEvent) => {
   if (!$currentSpan)
     throw new Error('$currentSpan query failed at event start');
 
   const focusLetter = $currentSpan.textContent;
 
-  if (event.key === focusLetter) {
-    $currentSpan.className = 'correct';
+  if (currentLetterNum < currentSentence.length) {
+    totalKeyPress++;
+  }
 
-    currentLetterNum++;
-
-    if (currentLetterNum < currentSentence.length) {
-      updateCurrentSpan();
-      correctKeyPress++;
-    } else {
-      $currentSpan = document.querySelector('#null-span');
-    }
-  } else {
+  if (event.key !== focusLetter) {
     $currentSpan.className = 'current incorrect';
+    return;
+  }
+
+  $currentSpan.className = 'correct';
+
+  currentLetterNum++;
+  correctKeyPress++;
+
+  if (currentLetterNum < currentSentence.length) {
+    updateCurrentSpan();
+  } else {
+    $currentSpan = document.querySelector('#null-span');
   }
 
   if (currentLetterNum === currentSentence.length) {
     $restartButton.className = 'visible';
     console.log('correctKeyPress:', correctKeyPress);
     console.log('totalKeyPress:', totalKeyPress);
-    $accuracy.textContent =
-      'Accuracy: ' +
-      String(Math.floor((correctKeyPress / totalKeyPress) * 100)) +
-      '%';
+    accuracy = Math.floor((correctKeyPress / totalKeyPress) * 100);
+
+    $accuracy.textContent = `Accuracy: ${correctKeyPress} / ${totalKeyPress}\n(${accuracy}%)`;
     $accuracy.className = 'visible';
-  } else {
-    totalKeyPress++;
   }
 });
 
