@@ -22,15 +22,15 @@ $tabContainer.addEventListener('click', (event: Event) => {
     }
   }
 
+  const currentView = $eventTarget.dataset.view;
+  let showIndex = 0;
+
   for (let i = 0; i < $allViews.length; i++) {
     $allViews[i].className = 'view hidden';
-  }
-
-  const currentView = $eventTarget.dataset.view;
-
-  for (let i = 0; i < $allViews.length; i++) {
     if ($allViews[i].getAttribute('data-view') === currentView) {
-      $allViews[i].className = 'view';
+      showIndex = i;
     }
   }
+
+  $allViews[showIndex].className = 'view';
 });
