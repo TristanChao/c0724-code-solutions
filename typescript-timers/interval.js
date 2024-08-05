@@ -5,7 +5,7 @@ let count = 4;
 const intervalId = setInterval(function () {
   count--;
   if (count > 0) {
-    $countdownDisplay.textContent = String(count);
+    $countdownDisplay.textContent = count.toString();
   } else {
     $countdownDisplay.textContent = '~Earth Beeeelooowww Us~';
     clearInterval(intervalId);
