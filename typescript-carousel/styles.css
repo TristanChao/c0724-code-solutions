@@ -1,0 +1,40 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-sa {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.direction-btn {
+  height: 40px;
+  width: 40px;
+  font-size: 35px;
+  padding: 0;
+  border-color: transparent;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.nav-btn {
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  padding: 0;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: transparent;
+}
