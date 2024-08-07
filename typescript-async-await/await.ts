@@ -29,6 +29,6 @@ async function readChained(): Promise<void> {
   console.log(elapsed(), 'readChained3:', message3);
 }
 
-readOnce()
-  .then(() => readSeveral())
-  .then(() => readChained());
+await readOnce();
+await readSeveral();
+await readChained();
