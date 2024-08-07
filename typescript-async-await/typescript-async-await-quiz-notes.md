@@ -22,7 +22,7 @@ Answer the following questions in the provided markdown file before turning in t
   - the `throw` keyword will indicate that an error should be passed to the catch block
     - if there is no catch block, the program will terminate
 - What happens if you forget to use `await` on a Promise? In that case, what happens to the Promise rejection?
-  - if you don't use `await` on a Promise, it will be run synchronously
+  - the program will not wait for the Promise to finish and send a response before running the rest of the code
   - instead of running what is in the catch block, it will just print the error it received
 - Which style of asynchronous programming do you prefer — callbacks, `Promise.then`, or `async/await`? Why?
   - `async/await` seems to be the easiest to conceptualize and understand while coding
