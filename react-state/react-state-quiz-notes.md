@@ -14,7 +14,7 @@ Answer the following questions in the provided markdown file before turning in t
 - What is the purpose of state in React?
   - a state allows information to be stored between calls of a component function, allowing data to be maintained across renders
 - Why can't we just maintain state in a local variable?
-  - states can only be called by components or other hooks
+  - local variables cannot store data between renders
 - What two actions happen when you call a `state setter` function?
   - the new value to be set is stored in a cache by React
   - React schedules a re-render of the app
