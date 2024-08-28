@@ -1,0 +1,40 @@
+body * {
+  box-sizing: border-box;
+}
+
+#switch-outer {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  border: 3px solid black;
+  display: flex;
+  margin-right: 20px;
+}
+
+#switch-outer.on {
+  background-color: green;
+  justify-content: flex-end;
+}
+
+.off {
+  background-color: lightgray;
+  justify-content: flex-start;
+}
+
+#switch-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-color: white;
+  position: relative;
+  bottom: 3px;
+}
+
+#switch-inner.off {
+  right: 3px;
+}
+
+#switch-inner.on {
+  left: 3px;
+}
