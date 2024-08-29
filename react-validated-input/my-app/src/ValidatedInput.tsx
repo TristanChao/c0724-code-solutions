@@ -48,10 +48,7 @@ export function ValidatedInput() {
       hasNoNums = false;
     } else if (specialChars.includes(password[i])) {
       hasNoSpecialChars = false;
-    } else if (
-      !specialChars.includes(password[i]) &&
-      password[i] === password[i].toUpperCase()
-    ) {
+    } else if (password[i] === password[i].toUpperCase()) {
       hasNoCapitals = false;
     }
   }
@@ -63,14 +60,7 @@ export function ValidatedInput() {
   if (errorArr.includes('no password')) {
     errorMessage = 'Password is required.';
   } else if (errorArr.length) {
-    errorMessage = 'Password ';
-    errorArr.forEach((messagePiece, index) => {
-      if (index > 0) {
-        errorMessage += ', ' + messagePiece;
-      } else {
-        errorMessage += messagePiece;
-      }
-    });
+    errorMessage = 'Password ' + errorArr.join(', ');
     errorMessage += '.';
   }
 
@@ -88,8 +78,8 @@ export function ValidatedInput() {
           value={password}
           type="password"
         />
-        <FaXmark id="xmark" className={xmarkClass} />
-        <FaCheck id="check" className={checkClass} />
+        <FaXmark className={`xmark ${xmarkClass}`} />
+        <FaCheck className={`check ${checkClass}`} />
       </div>
       <p className="error-label">{errorMessage}</p>
     </div>
