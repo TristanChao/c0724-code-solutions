@@ -21,7 +21,6 @@ export function RegistrationFormControlled() {
             <input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              name="username"
             />
           </label>
         </div>
@@ -32,7 +31,6 @@ export function RegistrationFormControlled() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
-              name="password"
             />
           </label>
         </div>
