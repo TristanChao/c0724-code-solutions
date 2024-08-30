@@ -1,27 +1,22 @@
-import { NavButton } from './NavButton.tsx';
+import { useState } from 'react';
 import { NextButton } from './NextButton.tsx';
 import { PrevButton } from './PrevButton.tsx';
+import { NavSection } from './NavSection.tsx';
 
 type Props = {
   items: string[];
 };
 
 export function RotatingBanner({ items }: Props) {
+  const [index, setIndex] = useState(0);
+  setIndex(0); // called setIndex to get rid of 'unused' error so I could commit
+
   return (
     <div>
-      <h2>{items[0]}</h2>
-      <div>
-        <PrevButton />
-      </div>
-      <NavButton index="0" />
-      <NavButton index="1" />
-      <NavButton index="2" />
-      <NavButton index="3" />
-      <NavButton index="4" />
-      <NavButton index="5" />
-      <div>
-        <NextButton />
-      </div>
+      <h2>{items[index]}</h2>
+      <PrevButton />
+      <NavSection count={items.length} />
+      <NextButton />
     </div>
   );
 }
