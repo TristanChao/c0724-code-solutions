@@ -6,14 +6,11 @@ export function Stopwatch() {
   const [seconds, setSeconds] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
 
-  // console.log('intervalId:', intervalId);
-
-  function updateSeconds() {
-    setSeconds((seconds) => seconds + 1);
-  }
-
   function handleStart() {
-    const interval = setInterval(updateSeconds, 1000);
+    const interval = setInterval(
+      () => setSeconds((seconds) => seconds + 1),
+      1000
+    );
     setIntervalId(interval);
   }
 
