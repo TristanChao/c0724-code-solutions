@@ -8,13 +8,6 @@ type Props = {
 export function SearchableList({ quotes }: Props) {
   const [searchInput, setSearchInput] = useState('');
 
-  // const filteredQuotes: string[] = [];
-  // quotes.forEach((quote) => {
-  //   if (quote.toLowerCase().includes(searchInput.toLowerCase())) {
-  //     filteredQuotes.push(quote);
-  //   }
-  // });
-
   const filteredQuotes = quotes.filter((quote) =>
     quote.toLowerCase().includes(searchInput.toLowerCase())
   );
