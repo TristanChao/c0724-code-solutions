@@ -1,5 +1,6 @@
 import { NavButton } from './NavButton.tsx';
-import { PrevNextButton } from './PrevNextButton.tsx';
+import { NextButton } from './NextButton.tsx';
+import { PrevButton } from './PrevButton.tsx';
 
 type Props = {
   items: string[];
@@ -10,7 +11,7 @@ export function RotatingBanner({ items }: Props) {
     <div>
       <h2>{items[0]}</h2>
       <div>
-        <PrevNextButton btnType="Prev" />
+        <PrevButton />
       </div>
       <NavButton index="0" />
       <NavButton index="1" />
@@ -19,7 +20,7 @@ export function RotatingBanner({ items }: Props) {
       <NavButton index="4" />
       <NavButton index="5" />
       <div>
-        <PrevNextButton btnType="Next" />
+        <NextButton />
       </div>
     </div>
   );
