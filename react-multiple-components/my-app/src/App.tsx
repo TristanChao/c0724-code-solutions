@@ -9,10 +9,9 @@ export default function App() {
     'Dromedary',
     'Elephant',
     'Ferret',
+    'Giraffe',
+    'Hippo',
+    'Iguana',
   ];
-  return (
-    <>
-      <RotatingBanner items={items} />
-    </>
-  );
+  return <RotatingBanner items={items} />;
 }

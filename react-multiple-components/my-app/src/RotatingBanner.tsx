@@ -15,11 +15,7 @@ export function RotatingBanner({ items }: Props) {
   }
 
   function toPrevIndex() {
-    if (index - 1 < 0) {
-      setIndex(items.length - 1);
-    } else {
-      setIndex(index - 1);
-    }
+    setIndex((index - 1 + items.length) % items.length);
   }
 
   function toNextIndex() {
@@ -30,7 +26,11 @@ export function RotatingBanner({ items }: Props) {
     <div>
       <h2>{items[index]}</h2>
       <PrevButton onPrevClick={toPrevIndex} />
-      <NavSection onNavClick={handleChangeIndex} count={items.length} />
+      <NavSection
+        currentIndex={index}
+        onNavClick={handleChangeIndex}
+        count={items.length}
+      />
       <NextButton onNextClick={toNextIndex} />
     </div>
   );

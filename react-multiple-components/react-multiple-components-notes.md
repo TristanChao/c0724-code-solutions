@@ -5,10 +5,11 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - What are the phases in the React design process?
-
+  - layout/components, state, events
 - How does data flow in React?
-
+  - from parents to children
 - How can children components modify state in their parents?
+  - pass a function containing a state setter as a custom event prop to the child
 
 ## Notes
 
