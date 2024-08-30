@@ -8,21 +8,21 @@ type Props = {
 export function SearchableList({ quotes }: Props) {
   const [searchInput, setSearchInput] = useState('');
 
-  const filteredQuotes: string[] = [];
-  quotes.forEach((quote) => {
-    if (quote.toLowerCase().includes(searchInput.toLowerCase())) {
-      filteredQuotes.push(quote);
-    }
-  });
+  // const filteredQuotes: string[] = [];
+  // quotes.forEach((quote) => {
+  //   if (quote.toLowerCase().includes(searchInput.toLowerCase())) {
+  //     filteredQuotes.push(quote);
+  //   }
+  // });
+
+  const filteredQuotes = quotes.filter((quote) =>
+    quote.toLowerCase().includes(searchInput.toLowerCase())
+  );
 
   return (
     <div>
       <SearchBar input={searchInput} onInputChange={setSearchInput} />
-      {filteredQuotes.length ? (
-        <QuotesList quotes={filteredQuotes} />
-      ) : (
-        <p>No items match the filter.</p>
-      )}
+      <QuotesList quotes={filteredQuotes} />
     </div>
   );
 }

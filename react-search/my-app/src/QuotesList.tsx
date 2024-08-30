@@ -8,5 +8,9 @@ export function QuotesList({ quotes }: Props) {
     quoteListItems.push(<li key={i}>{quotes[i]}</li>);
   }
 
-  return <ul>{quoteListItems}</ul>;
+  return quoteListItems.length ? (
+    <ul>{quoteListItems}</ul>
+  ) : (
+    <p>No items match the filter.</p>
+  );
 }
