@@ -1,6 +1,5 @@
 type Props = {
   id: number;
-  currentDisplayId: number | undefined;
   title: string;
   content: string;
   isDisplayed: boolean;
@@ -8,7 +7,6 @@ type Props = {
 };
 export function Topic({
   id,
-  currentDisplayId,
   title,
   onHeaderClick,
   isDisplayed,
@@ -17,11 +15,11 @@ export function Topic({
   return (
     <>
       <div
-        onClick={() => onHeaderClick(currentDisplayId === id ? undefined : id)}
+        onClick={() => onHeaderClick(isDisplayed ? undefined : id)}
         className="header">
         {title}
       </div>
-      {isDisplayed ? <div>{content}</div> : null}
+      {isDisplayed && <div>{content}</div>}
     </>
   );
 }

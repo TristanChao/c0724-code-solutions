@@ -18,9 +18,8 @@ export function Accordion({ topics }: Props) {
     const topic = (
       <Topic
         id={topics[i].id}
-        currentDisplayId={displayId}
         title={topics[i].title}
-        key={`header${topics[i].id}`}
+        key={topics[i].id}
         content={topics[i].content}
         isDisplayed={topics[i].id === displayId}
         onHeaderClick={setDisplayId}
