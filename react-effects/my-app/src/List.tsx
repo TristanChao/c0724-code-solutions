@@ -13,14 +13,12 @@ export function List() {
     async function read() {
       try {
         const response = await readItems();
-        if (!response) throw new Error('Response failed.');
-
-        setIsLoading(false);
         setItems(response);
       } catch (err) {
-        setIsLoading(false);
         setError(err);
         console.error(err);
+      } finally {
+        setIsLoading(false);
       }
     }
 
