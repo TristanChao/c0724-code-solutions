@@ -4,7 +4,7 @@ export function Timer() {
   const [time, setTime] = useState(0);
   useEffect(() => {
     const timerId = setTimeout(() => {
-      setTime((prev) => prev + 1);
+      setTime(time + 1);
       console.log(`Time is: ${time}`);
     }, 1000);
     return () => clearTimeout(timerId);
