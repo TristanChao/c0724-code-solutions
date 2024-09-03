@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { TopicContent } from './TopicContent';
-import { TopicHeader } from './TopicHeader';
+import { Topic } from './Topic.tsx';
 
 type Topic = {
   id: number;
@@ -16,23 +15,18 @@ export function Accordion({ topics }: Props) {
   const topicBoxArray: JSX.Element[] = [];
 
   for (let i = 0; i < topics.length; i++) {
-    const header = (
-      <TopicHeader
+    const topic = (
+      <Topic
         id={topics[i].id}
         currentDisplayId={displayId}
         title={topics[i].title}
         key={`header${topics[i].id}`}
+        content={topics[i].content}
+        isDisplayed={topics[i].id === displayId}
         onHeaderClick={setDisplayId}
       />
     );
-    const content = (
-      <TopicContent
-        isDisplayed={topics[i].id === displayId}
-        content={topics[i].content}
-        key={`content${topics[i].id}`}
-      />
-    );
-    topicBoxArray.push(header, content);
+    topicBoxArray.push(topic);
   }
 
   return <div className="accordion">{topicBoxArray}</div>;
