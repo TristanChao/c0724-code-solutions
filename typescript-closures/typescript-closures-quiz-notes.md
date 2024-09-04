@@ -24,6 +24,11 @@ Answer the following questions in the provided markdown file before turning in t
 
 All student notes should be written here.
 
+- in counter.tsx, an infinite loop was created initially because a regular function was a dependency of the effect
+  - this caused a loop because the runtime would create a new instance of the function reference every render, which would cause the dependencies to change and call the effect again
+- the useCallback hook will return the same function reference until its dependencies change
+  - this will prevent infinite loops like in the counter.tsx
+
 How to write `Code Examples` in markdown
 
 for JS:
