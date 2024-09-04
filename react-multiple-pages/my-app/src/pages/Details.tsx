@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import { type Item, readItem } from '../lib/read';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-type Props = {
-  itemId: number;
-};
-export function Details({ itemId }: Props) {
+export function Details() {
   const [item, setItem] = useState<Item>();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<unknown>();
+  const { itemId } = useParams();
 
   useEffect(() => {
     async function loadItem(itemId: number) {
@@ -41,9 +39,9 @@ export function Details({ itemId }: Props) {
     <div className="container">
       <div className="flex flex-col">
         <div className="flex-auto p-6">
-          <div className="p-3 text-gray-600 cursor-pointer">
-            <Link to="/">&lt; Back to Dashboard</Link>
-          </div>
+          <Link to="/index" className="p-3 text-gray-600 cursor-pointer">
+            &lt; Back to Dashboard
+          </Link>
           <div className="flex flex-wrap mb-4">
             <div className="w-full sm:w-1/2 md:w-2/5 pt-2 px-4">
               <img

@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react';
 import { type Item, readItems } from '../lib/read';
 import { Link } from 'react-router-dom';
 
-type Props = {
-  onDetails: (id: number) => void;
-};
-export function Dashboard({ onDetails }: Props) {
+export function Dashboard() {
   const [items, setItems] = useState<Item[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<unknown>();
@@ -43,7 +40,7 @@ export function Dashboard({ onDetails }: Props) {
       <div className="flex flex-wrap">
         {items?.map((item) => (
           <div key={item.itemId} className="w-full md:w-1/2 lg:w-1/3 pr-4 pl-4">
-            <ItemCard item={item} onDetails={onDetails} />
+            <ItemCard item={item} />
           </div>
         ))}
       </div>
@@ -53,18 +50,13 @@ export function Dashboard({ onDetails }: Props) {
 
 type CardProps = {
   item: Item;
-  onDetails: (id: number) => void;
 };
-function ItemCard({ item, onDetails }: CardProps) {
+function ItemCard({ item }: CardProps) {
   return (
-    <div className="block cursor-pointer text-gray-900 rounded border border-gray-300 mb-4">
-      <div className="flex-auto p-6">
-        <Link to={`/details/:${item.itemId}`}>
-          <h5 onClick={() => onDetails(item.itemId)} className="font-bold mb-3">
-            {item.name}
-          </h5>
-        </Link>
-      </div>
+    <div className="block cursor-pointer text-gray-900 rounded border border-gray-300 mb-4 p-3">
+      <Link to={`/details/${item.itemId}`} className="flex-auto p-6">
+        <h5 className="font-bold mb-3">{item.name}</h5>
+      </Link>
     </div>
   );
 }
