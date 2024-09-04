@@ -1,7 +1,7 @@
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 type Props = {
-  type: string;
+  type: 'back' | 'next';
   onArrowClick: () => void;
 };
 export function ArrowButton({ type, onArrowClick }: Props) {
