@@ -9,7 +9,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/" element={<Header />}>
-        <Route path="index" element={<Dashboard />} />
+        <Route index element={<Dashboard />} />
         <Route path="about" element={<About />} />
         <Route path="details/:itemId" element={<Details />} />
         <Route path="*" element={<NotFound />} />
