@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { readCatalog } from '../lib/read.ts';
-import { type Product } from '../lib/data.ts';
-import { toDollars } from '../lib/to-dollars.ts';
+import { readCatalog } from './lib/read.ts';
+import { type Product } from './lib/data.ts';
+import { toDollars } from './lib/to-dollars.ts';
 import './Catalog.css';
 import { Link } from 'react-router-dom';
 
@@ -43,12 +43,7 @@ export function Catalog() {
             to={`/details/${product.productId}`}
             key={product.productId}
             className="item-card">
-            <ItemCard
-              imageUrl={product.imageUrl}
-              name={product.name}
-              price={product.price}
-              shortDescription={product.shortDescription}
-            />
+            <ItemCard product={product} />
           </Link>
         ))}
       </div>
@@ -57,20 +52,17 @@ export function Catalog() {
 }
 
 type cardProps = {
-  imageUrl: string;
-  name: string;
-  price: number;
-  shortDescription: string;
+  product: Product;
 };
-function ItemCard({ imageUrl, name, price, shortDescription }: cardProps) {
+function ItemCard({ product }: cardProps) {
   return (
     <>
       <div className="card-img-div">
-        <img src={imageUrl} alt={name} />
+        <img src={product.imageUrl} alt={product.name} />
       </div>
-      <h3>{name}</h3>
-      <p>{toDollars(price)}</p>
-      <p>{shortDescription}</p>
+      <h3>{product.name}</h3>
+      <p>{toDollars(product.price)}</p>
+      <p>{product.shortDescription}</p>
     </>
   );
 }

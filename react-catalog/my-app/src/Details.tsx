@@ -1,8 +1,8 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { readProduct } from '../lib/read';
-import { type Product } from '../lib/data';
+import { readProduct } from './lib/read';
+import { type Product } from './lib/data';
 import { useEffect, useState } from 'react';
-import { toDollars } from '../lib/to-dollars';
+import { toDollars } from './lib/to-dollars';
 import './Details.css';
 
 export function Details() {
