@@ -10,6 +10,7 @@ Answer the following questions in the provided markdown file before turning in t
   - a portal is rendered in the dom in the place that was specified as the second argument of the createPortal function
 - When might you want to use a Portal?
   - you might want to use a portal when a component is created as a child of another component but should be rendered into the body
+  - z-index, positioning, overflow-clipping
 
 ## Notes
 
