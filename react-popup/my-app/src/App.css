@@ -1,0 +1,26 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid #c2c2c2;
+  margin: 0;
+}
+
+.menu-wrapper {
+  position: absolute;
+  background-color: white;
+}
+
+.shade {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  pointer-events: all;
+}
