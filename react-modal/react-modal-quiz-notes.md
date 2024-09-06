@@ -10,7 +10,7 @@ Answer the following questions in the provided markdown file before turning in t
   - you show a dialog with the showModal() function
   - you hide it with the close() function
 - How do you manipulate child components in React? Why will that not work for the `<dialog>` element?
-  - you can manipulate children of custom components by nesting them and creating a 'children' prop in the component which has a type of ReactNode
+  - you pass the child a prop that can be used to affect its behavior
   - this wouldn't work in a regular dialog element because you can't access its props the same way as a custom component
 - How do you call the dialog element's functions in React?
   - you need to set its ref prop to a useRef, then you can call its function through ref.current
