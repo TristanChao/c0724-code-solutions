@@ -5,11 +5,11 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - What is a database schema?
-  - a database schema is a collection of tables
+  - a database schema describes the organization of data
 - What is a table?
-  - a table stores a collection of data with attributes in columns and sets of data in rows
+  - a table stores sets of data with the same set of attributes
 - What is a row?
-  - a row represents one set of data
+  - a row represents one piece of data
 - What is an attribute and what other names are used to describe them?
   - attributes are the information that sets of data contain
   - they can also be described as 'columns'
@@ -17,6 +17,10 @@ Answer the following questions in the provided markdown file before turning in t
 ## Notes
 
 All student notes should be written here.
+
+- `psql -d pagila -f schema.sql`
+  - `-d` tells which database to work in
+  - `-f` tells which file to execute
 
 How to write `Code Examples` in markdown
 
