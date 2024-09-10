@@ -23,6 +23,7 @@ Answer the following questions in the provided markdown file before turning in t
   - if you don't specify which rows to update or delete with the `where` clause, it will affect the entire database
 - How do you accidentally delete or update all rows in a table?
   - by not using the `where` clause to specify which rows you want to affect
+  - if you accidentally put a semicolon before your where `clause`, you can accidentally affect the whole database
 - How do you get back the modified row without a separate `select` statement?
   - by finishing the statement with a `returning` clause specifying the columns you want, or `*` if you want all of them
 - Why did you get an error when trying to delete certain films?
