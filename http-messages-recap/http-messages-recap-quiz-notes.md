@@ -17,7 +17,7 @@ Answer the following questions in the provided markdown file before turning in t
   - HTTP version, status code, status text
   - ex HTTP/1.1 200 OK
 - What are HTTP headers?
-  - headers allow clients and servers to send additional information with messages
+  - headers allow clients and servers to send additional information (metadata) with messages
 - Is a body required for a valid HTTP message?
   - no
 
