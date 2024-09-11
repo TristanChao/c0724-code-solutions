@@ -14,6 +14,8 @@ Answer the following questions in the provided markdown file before turning in t
   - environment variables are variables that hold configuration information for the environment its running in
   - the node runtime creates a `process` object containing an `env` property which contains the environment variables
 - What is a REPL?
+  - REPL stands for read-eval-print loop
+  - a REPL is a programming environment that takes single user inputs, executes them, then returns the result to the user
 
 ## Notes
 
