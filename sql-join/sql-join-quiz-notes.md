@@ -14,6 +14,9 @@ Answer the following questions in the provided markdown file before turning in t
      from "table"
      join "table" using ("tableId")
     ```
+  - to use `using` the foreign key has to have the same name as the primary key it references
+  - if it doesn't, you need to use `on`
+    - join "table2" on "table1"."foreignKey" = "table2"."primaryKey"
 - How do you temporarily rename columns or tables in a SQL statement?
   - use the `as` argument after the table or column name
   - for columns its in the select clause, for tables its in the from clause
@@ -23,7 +26,7 @@ Answer the following questions in the provided markdown file before turning in t
   - a one-to-many relationship is between two tables where each row in table1 could be referenced by many rows in table2, while each row in table2 can only reference one row in table1
   - for example, in a product/supplier relationship, each supplier could produce many products, but each product only comes from one supplier
 - How do you create a many-to-many relationship between two tables?
-  - a many-to-many relationship between two tables, each of the rows in both tables could be reference in several rows in the other table
+  - to make a many-to-many relationship between two tables, you need to create a new table (called a join table) which references both tables
   - for example, in a class/student relationship, each class could reference multiple students, and each student could reference multiple classes
 
 ## Notes
