@@ -7,6 +7,7 @@ Answer the following questions in the provided markdown file before turning in t
 - What are the 3 components of a fullstack Web architecture?
   - frontend, backend, database
   - can also be referred to as presentation, logic, data
+  - client, server, database
 - What is Node.js and why is it useful?
   - Node.js is a program for running JS outside of web browsers
   - it is commonly used to build backend for web apps, since the web app itself is written in JS, so another language doesn't need to be learned to implement backend
