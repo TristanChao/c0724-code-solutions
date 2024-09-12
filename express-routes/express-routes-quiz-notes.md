@@ -9,14 +9,15 @@ Answer the following questions in the provided markdown file before turning in t
   - read -> get
   - update -> put
   - delete -> delete
+  - the server is not required to follow this convention
 - What is Express middleware?
   - express middleware is a function that runs based on specific pieces of the request
 - What is Express middleware useful for?
   - middleware allows you to run certain functions depending on the request made by the client
 - How do you mount a middleware with an Express application?
-  - mounting a middleware means to call a special function, which adds it to the middleware array
+  - mounting a middleware means to call method of the express app, which adds it to the middleware array
 - Which objects does an Express application pass to your middleware to manage the request/response lifecycle of the server?
-  - the request and response objects
+  - the request and response objects and the next function
   - the request object lets you access information from the request sent by the client
   - the response object lets you send information back from the server
 
