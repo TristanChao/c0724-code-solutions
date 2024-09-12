@@ -5,13 +5,14 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - What is the purpose of the Express Static middleware?
-  - express static middleware makes it so the browser only queries for static content when it is needed, as opposed to downloading
+  - express static middleware serves the client with static content so it can be displayed
 - What does `express.static()` return?
   - it returns an object containing the static media that is being served
 - What are several examples of static files?
   - images, videos, html pages
 - What is a good way to serve application images using Express?
   - by calling express.static inside an app.use
+  - the images should be stored in a folder in the public directory
 
 ## Notes
 
