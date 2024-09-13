@@ -20,9 +20,6 @@ app.get('/api/films', async (req, res, next) => {
       order by "replacementCost" desc;
     `;
     const result = await db.query(sql);
-    if (!result) {
-      res.send([]);
-    }
     res.send(result.rows);
   } catch (err) {
     next(err);
