@@ -52,10 +52,6 @@ app.post('/api/actors', async (req, res, next) => {
     const result = await db.query(sql, params);
     const newActor = result.rows[0];
 
-    if (!newActor) {
-      throw new ClientError(404, 'new actor not created');
-    }
-
     res.status(201).json(newActor);
   } catch (err) {
     next(err);
@@ -65,7 +61,7 @@ app.post('/api/actors', async (req, res, next) => {
 app.put('/api/actors/:actorId', async (req, res, next) => {
   try {
     const { actorId } = req.params;
-    const { firstName, lastName } = req.query;
+    const { firstName, lastName } = req.body;
     if (!Number.isInteger(+actorId)) {
       throw new ClientError(400, 'actorId must be an integer');
     }
