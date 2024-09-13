@@ -12,6 +12,8 @@ const db = new pg.Pool({
 
 const app = express();
 
+app.use(express.json());
+
 // Endpoint for testing
 app.get('/api/actors/:actorId', async (req, res, next) => {
   try {
@@ -35,7 +37,7 @@ app.get('/api/actors/:actorId', async (req, res, next) => {
 
 app.post('/api/actors', async (req, res, next) => {
   try {
-    const { firstName, lastName } = req.query;
+    const { firstName, lastName } = req.body;
     if (firstName === undefined || lastName === undefined) {
       throw new ClientError(400, 'firstName and lastName are required');
     }
@@ -63,13 +65,7 @@ app.post('/api/actors', async (req, res, next) => {
 app.put('/api/actors/:actorId', async (req, res, next) => {
   try {
     const { actorId } = req.params;
-    const { firstName, lastName } = req.query;
-    if (actorId === undefined) {
-      throw new ClientError(400, 'actorId is required');
-    }
-    if (!Number.isInteger(+actorId)) {
-      throw new ClientError(400, 'actorId must be an integer');
-    }
+    const { firstName, lastName } = req.body;
     if (firstName === undefined || lastName === undefined) {
       throw new ClientError(400, 'firstName and lastName are required');
     }
@@ -97,12 +93,6 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
 app.delete('/api/actors/:actorId', async (req, res, next) => {
   try {
     const { actorId } = req.params;
-    if (!actorId) {
-      throw new ClientError(400, 'actorId is required');
-    }
-    if (!Number.isInteger(+actorId)) {
-      throw new ClientError(400, 'actorId must be an integer');
-    }
 
     const sql = `
       delete
@@ -116,7 +106,7 @@ app.delete('/api/actors/:actorId', async (req, res, next) => {
       throw new ClientError(404, `actor ${actorId} not found`);
     }
 
-    res.status(204).send();
+    res.sendStatus(204);
   } catch (err) {
     next(err);
   }

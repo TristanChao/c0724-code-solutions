@@ -9,8 +9,8 @@ Answer the following questions in the provided markdown file before turning in t
 - What is the significance of an HTTP response's status?
   - the response status lets the client know what happened on the server's end, and whether their request was successful or not
 - What does the express.json() middleware do and when would you need it?
-  - the express.json middleware parses its argument as a json and sends it to the client
-  - you would use it to reduce the size of the body being sent, letting it travel over the network faster
+  - the express.json middleware parses arguments from the request body
+  - you would need it when you need to access arguments that were passed in the body, rather than as a parameter in the url
 
 ## Notes
 
