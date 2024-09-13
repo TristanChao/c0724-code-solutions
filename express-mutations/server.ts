@@ -65,7 +65,10 @@ app.post('/api/actors', async (req, res, next) => {
 app.put('/api/actors/:actorId', async (req, res, next) => {
   try {
     const { actorId } = req.params;
-    const { firstName, lastName } = req.body;
+    const { firstName, lastName } = req.query;
+    if (!Number.isInteger(+actorId)) {
+      throw new ClientError(400, 'actorId must be an integer');
+    }
     if (firstName === undefined || lastName === undefined) {
       throw new ClientError(400, 'firstName and lastName are required');
     }
@@ -93,6 +96,9 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
 app.delete('/api/actors/:actorId', async (req, res, next) => {
   try {
     const { actorId } = req.params;
+    if (!Number.isInteger(+actorId)) {
+      throw new ClientError(400, 'actorId must be an integer');
+    }
 
     const sql = `
       delete
