@@ -23,7 +23,7 @@ app.get('/api/films', async (req, res, next) => {
     if (!result) {
       res.send([]);
     }
-    res.send(result);
+    res.send(result.rows);
   } catch (err) {
     next(err);
   }
