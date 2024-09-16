@@ -17,7 +17,7 @@ export function UserDetails({ userId, onCancel }: Props) {
       try {
         const url = `https://jsonplaceholder.typicode.com/users/${userId}`;
         const response = await fetch(url);
-        if (!response) throw new Error(`cannot fetch ${url}`);
+        if (!response.ok) throw new Error(`cannot fetch ${url}`);
         const data = await response.json();
         setUser(data);
       } catch (err) {

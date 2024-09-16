@@ -22,7 +22,7 @@ export function Users() {
       try {
         const url = 'https://jsonplaceholder.typicode.com/users';
         const response = await fetch(url);
-        if (!response) throw new Error(`cannot fetch ${url}`);
+        if (!response.ok) throw new Error(`cannot fetch ${url}`);
         const data = (await response.json()) as User[];
         setUsers(data);
       } catch (err) {
