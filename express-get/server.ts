@@ -21,7 +21,6 @@ app.get('/api/films', async (req, res, next) => {
       limit 2;
     `;
     const result = await db.query(sql);
-    if (!result) res.json([]);
     res.json(result.rows);
   } catch (err) {
     next(err);
@@ -31,9 +30,7 @@ app.get('/api/films', async (req, res, next) => {
 app.get('/api/films/:filmId', async (req, res, next) => {
   try {
     const { filmId } = req.params;
-    if (filmId === undefined) {
-      throw new ClientError(400, 'filmId is required');
-    } else if (!Number.isInteger(+filmId)) {
+    if (!Number.isInteger(+filmId)) {
       throw new ClientError(400, 'filmId must be an integer');
     }
 
