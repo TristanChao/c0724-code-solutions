@@ -1,0 +1,13 @@
+div.header {
+  background-color: #2d3137;
+  color: white;
+  font-size: 22px;
+  padding: 10px 20px;
+  border-top: 10px solid #264689;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
