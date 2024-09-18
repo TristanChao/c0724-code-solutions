@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { CartContext } from './CartContext';
+import { CartContext, CartValue } from './CartContext';
 
-export function useCart() {
+export function useCart(): CartValue {
   if (useContext(CartContext) === undefined) {
     throw new Error('only call useCart inside the CartProvider tree');
   }
