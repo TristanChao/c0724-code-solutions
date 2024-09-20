@@ -75,6 +75,9 @@ export async function updateTodo(todo: Todo): Promise<Todo> {
 export async function removeTodo(todoId: number): Promise<void> {
   const req = {
     method: 'DELETE',
+    headers: {
+      Authorization: ('Bearer ' + readToken()) as string,
+    },
   };
   const res = await fetch(`/api/todos/${todoId}`, req);
   if (!res.ok) throw new Error(`fetch Error ${res.status}`);
