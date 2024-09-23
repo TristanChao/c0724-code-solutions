@@ -1,0 +1,17 @@
+.detail-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.img-div {
+  flex-basis: calc(40% - 20px);
+}
+
+.img-div img {
+  width: 100%;
+}
+
+.detail-div {
+  flex-basis: calc(60% - 20px);
+}
