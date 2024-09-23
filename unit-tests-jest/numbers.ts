@@ -9,18 +9,23 @@ export function evenNumbers(numbers: number[]): number[] {
  * Returns a number formatted in dollars and cents.
  */
 export function toDollars(amount: number): string {
-  return '$' + amount.toFixed(2);
+  if (amount >= 0) {
+    return '$' + amount.toFixed(2);
+  } else {
+    return '-$' + Math.abs(amount).toFixed(2);
+  }
 }
 
 /**
  * Returns a new array of numbers where every entry has been divided by the
  * given divisor. Does not modify the original array.
  */
-export function divideBy(numbers: number[], divisor: number): number[] {
-  for (let i = 0; i < numbers.length; i++) {
-    numbers[i] = numbers[i] / divisor;
-  }
-  return numbers;
+export function divideBy(numbers: number[], divisor: number): number[][] {
+  // for (let i = 0; i < numbers.length; i++) {
+  //   numbers[i] = numbers[i] / divisor;
+  // }
+  // return numbers;
+  return [numbers.map((num) => num / divisor), numbers];
 }
 
 /**
@@ -33,8 +38,8 @@ export function multiplyBy(
 ): Record<string, unknown> {
   const result: Record<string, unknown> = {};
   Object.entries(obj).forEach(([key, value]) => {
-    if (Number.isInteger(value)) {
-      result[key] = Number(value) * multiplier;
+    if (!Number.isNaN(Number(value))) {
+      result[key] = Math.round(Number(value) * multiplier * 100) / 100;
     } else {
       result[key] = value;
     }
