@@ -11,14 +11,14 @@ test('converts a number into $#.## format', () => {
 });
 
 test('divides each number in an array (first arg) by the divisor (second arg)', () => {
-  const original = [4, 5, 6, 7, 8];
-  expect(divideBy(original, 2)).toStrictEqual([[2, 2.5, 3, 3.5, 4], original]);
+  expect(divideBy([4, 5, 6, 7, 8], 2)).toStrictEqual([2, 2.5, 3, 3.5, 4]);
+  expect(divideBy([], 4)).toStrictEqual([]);
+  expect(divideBy([2, 4], 0)).toStrictEqual([Infinity, Infinity]);
 
-  expect(divideBy([], 4)).toStrictEqual([[], []]);
-  expect(divideBy([2, 4], 0)).toStrictEqual([
-    [Infinity, Infinity],
-    [2, 4],
-  ]);
+  const test = [1, 2, 3, 4];
+  const result = divideBy(test, 2);
+  expect(result).not.toBe(test);
+  // this will check if the object reference is the same
 });
 
 test('in an object (1st arg) all numerical values are multiplied by multiplier (2nd arg)', () => {
